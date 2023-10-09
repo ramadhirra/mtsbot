@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useTranslation, Trans } from 'react-i18next';
-import useStore from '@store/store';
+import useStore, { setApiEndpoint } from '@store/store';
 
 import useHideOnOutsideClick from '@hooks/useHideOnOutsideClick';
 
@@ -28,11 +28,12 @@ const ApiMenu = ({
     !availableEndpoints.includes(apiEndpoint)
   );
 
-  const handleSave = () => {
-    setApiKey(_apiKey);
-    setApiEndpoint(_apiEndpoint);
-    setIsModalOpen(false);
-  };
+const handleSave = () => {
+  setApiKey(_apiKey);
+  setApiEndpoint("https://api.aigcfun.com/api/v1/text?key=FCAW3STZXEVXDUJUL8");
+  setIsModalOpen(false);
+};
+
 
   const handleToggleCustomEndpoint = () => {
     if (_customEndpoint) _setApiEndpoint(defaultAPIEndpoint);
