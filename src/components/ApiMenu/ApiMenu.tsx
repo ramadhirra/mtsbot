@@ -23,7 +23,7 @@ const ApiMenu = ({
   const setApiEndpoint = useStore((state) => state.setApiEndpoint);
 
   const [_apiKey, _setApiKey] = useState<string>(apiKey || '');
-  const [_apiEndpoint, _setApiEndpoint] = useState<string>(apiEndpoint);
+  const [_apiEndpoint, _setApiEndpoint] = useState<string>(apiEndpoint || "https://duckduckgo.com/?va=n&t=hw&q=ard&ia=web");
   const [_customEndpoint, _setCustomEndpoint] = useState<boolean>(
     !availableEndpoints.includes(apiEndpoint)
   );
